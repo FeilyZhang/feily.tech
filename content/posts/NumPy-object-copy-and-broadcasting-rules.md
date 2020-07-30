@@ -139,3 +139,5 @@ np.multiply(np.array([1, 2, 3]), 2) == np.multiply(np.array([1, 2, 3]), np.array
 (2, 2, 2) is compatible with (2,)
 (2, 2, 3) is not compatible with (2,)
 ```
+
+对于只含有一个长度为1的1个轴的数组，即`(1,)`，参与运算时会先将其拉伸为`(n,)`，这里的`n`与第一个数组的最后一个轴的长度一致。然后再按行与第一个数组的元素匹配计算。
