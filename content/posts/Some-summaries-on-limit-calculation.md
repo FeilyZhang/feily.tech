@@ -183,7 +183,7 @@ draft: false
 
 ### **其余形式的未定式**
 
-#### **$0·+\infty$型未定式**
+#### **$0·\infty$型未定式**
 
 对于$0·+\infty$型未定式，可以通过变形将其转化为$\frac{0}{0}$与$\frac{\infty}{\infty}$型未定式，从而便可以使用洛必达法则，比如求
 
@@ -244,3 +244,22 @@ draft: false
 令$t = 1 - x$，那么$t \to 0^+$，容易求得极限
 
 \begin{equation}\lim_{x \to 1^-}\ln x \ln(1 - x) = \lim_{x \to 1^-}(x - 1)\ln(1 - x) = -\lim_{t \to 0^+}t \ln t = 0\end{equation}
+
+#### **$\infty·\infty$型未定式**
+
+对于$\infty·\infty$型未定式，主要思路有两种
+
+1. 如果函数中存在分式，比如分式相加减等，则先通分，将加减法变形为乘除法，然后便可以使用其它技术进行进一步处理；
+2. 如果函数中没有分母，则可以通过提取公因式，或者做倒代换做出分母，然后通分（如果必要的话），再进一步处理。
+
+示例如下，求下列极限
+
+\begin{equation}\lim_{x \to 0}(\frac{1}{\sin^2x} - \frac{\cos^2x}{x^2})\end{equation}
+
+首先通分，再根据三角恒等式及等价无穷小替换，得
+
+\begin{equation}\lim_{x \to 0}(\frac{1}{\sin^2x} - \frac{\cos^2x}{x^2}) = \lim_{x \to 0}\frac{x^2 - \sin^2x\cos^2x}{x^2\sin^2x} = \lim_{x \to 0}\frac{x^2 - (\sin x\cos x)^2}{x^2\sin^2x} = s\lim_{x \to 0}\frac{x^2 - \frac{1}{4}sin^22x}{x^4}\end{equation}
+
+然后应用洛必达法则，得
+
+\begin{equation}\lim_{x \to 0}\frac{x^2 - \frac{1}{4}sin^22x}{x^4} = \lim_{x \to 0}\frac{2x - \frac{1}{2}\sin 4x}{4x^3} = \lim_{x \to 0}\frac{1 - \cos 4x}{6x^2} = \lim_{x \to 0}\frac{\frac{1}{2}(4x)^2}{6x^2} = \frac{4}{3}\end{equation}
