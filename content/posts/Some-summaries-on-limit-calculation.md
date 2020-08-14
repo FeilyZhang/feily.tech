@@ -245,9 +245,9 @@ draft: false
 
 \begin{equation}\lim_{x \to 1^-}\ln x \ln(1 - x) = \lim_{x \to 1^-}(x - 1)\ln(1 - x) = -\lim_{t \to 0^+}t \ln t = 0\end{equation}
 
-#### **$\infty·\infty$型未定式**
+#### **$\infty-\infty$型未定式**
 
-对于$\infty·\infty$型未定式，主要思路有两种
+对于$\infty-\infty$型未定式，主要思路有两种
 
 1. 如果函数中存在分式，比如分式相加减等，则先通分，将加减法变形为乘除法，然后便可以使用其它技术进行进一步处理；
 2. 如果函数中没有分母，则可以通过提取公因式，或者做倒代换做出分母，然后通分（如果必要的话），再进一步处理。
@@ -258,8 +258,95 @@ draft: false
 
 首先通分，再根据三角恒等式及等价无穷小替换，得
 
-\begin{equation}\lim_{x \to 0}(\frac{1}{\sin^2x} - \frac{\cos^2x}{x^2}) = \lim_{x \to 0}\frac{x^2 - \sin^2x\cos^2x}{x^2\sin^2x} = \lim_{x \to 0}\frac{x^2 - (\sin x\cos x)^2}{x^2\sin^2x} = s\lim_{x \to 0}\frac{x^2 - \frac{1}{4}sin^22x}{x^4}\end{equation}
+\begin{equation}\lim_{x \to 0}(\frac{1}{\sin^2x} - \frac{\cos^2x}{x^2}) = \lim_{x \to 0}\frac{x^2 - \sin^2x\cos^2x}{x^2\sin^2x} = \lim_{x \to 0}\frac{x^2 - (\sin x\cos x)^2}{x^2\sin^2x} = \lim_{x \to 0}\frac{x^2 - \frac{1}{4}sin^22x}{x^4}\end{equation}
 
 然后应用洛必达法则，得
 
 \begin{equation}\lim_{x \to 0}\frac{x^2 - \frac{1}{4}sin^22x}{x^4} = \lim_{x \to 0}\frac{2x - \frac{1}{2}\sin 4x}{4x^3} = \lim_{x \to 0}\frac{1 - \cos 4x}{6x^2} = \lim_{x \to 0}\frac{\frac{1}{2}(4x)^2}{6x^2} = \frac{4}{3}\end{equation}
+
+再比如求极限
+
+\begin{equation}\lim_{x \to +\infty}[x^2(e^\frac{1}{x} - 1) - x]\end{equation}
+
+由于原式中不存在分母，因此先做倒代换，令$u = \frac{1}{x}$，$x = \frac{1}{u}$, $u \to 0^+$，从而
+
+\begin{equation}\lim_{x \to +\infty}[x^2(e^\frac{1}{x} - 1) - x] = \lim_{u \to 0^+}\frac{e^u - 1}{u^2} - \frac{1}{u} = \lim_{u \to 0^+}\frac{e^u - 1 - u}{u^2}\end{equation}
+
+从而原式变为了$\frac{0}{0}$未定式，通过观察可知，容易连续应用洛必达法则，从而求得极限
+
+\begin{equation}\lim_{u \to 0^+}\frac{e^u - 1 - u}{u^2} = \lim_{u \to 0^+}\frac{e^u - 1}{2u} = \lim_{u \to 0^+}\frac{e^u}{2} = \frac{1}{2}\end{equation}
+
+#### **$\infty^0$和$0^0$型未定式**
+
+对于这两种类型的未定式，一般来说，可以通过恒等变形
+
+\begin{equation}\lim u^\upsilon = e^{\lim \upsilon\ln u}\end{equation}
+
+将其化为$\frac{0}{0},\frac{\infty}{\infty},0·+\infty$这三种类型然后便可利用对应的方法处理。
+
+例如，求极限
+
+\begin{equation}\lim_{x \to +\infty}(x + \sqrt{1 + x^2})^{\frac{1}{x}}\end{equation}
+
+那么可以将其化为如下形式
+
+\begin{equation}\lim_{x \to +\infty}(x + \sqrt{1 + x^2})^{\frac{1}{x}} = e^{\lim_{x \to +\infty}\frac{1}{x} \ln (x + \sqrt{1 + x^2})}\end{equation}
+
+由于
+
+\begin{equation}\lim_{x \to +\infty}\frac{1}{x} \ln (x + \sqrt{1 + x^2}) = \lim_{x \to +\infty}\frac{1}{x + \sqrt{1 + x^2}}(1 + \frac{x}{\sqrt{1 + x^2}})\end{equation}
+
+上式中，当$x \to +\infty$时，$\frac{x}{\sqrt{1 + x^2}} \to 1$，$x + \sqrt{1 + x^2} \to 2x$，从而
+
+\begin{equation}\lim_{x \to +\infty}\frac{1}{x + \sqrt{1 + x^2}}(1 + \frac{x}{\sqrt{1 + x^2}}) = \lim_{x \to +\infty}\frac{1}{2x}·2 = \lim_{x \to +\infty}\frac{1}{x} = 0\end{equation}
+
+从而求得原极限
+
+\begin{equation}\lim_{x \to +\infty}(x + \sqrt{1 + x^2})^{\frac{1}{x}} = e^{\lim_{x \to +\infty}\frac{1}{x} \ln (x + \sqrt{1 + x^2})} = e^0 = 1\end{equation}
+
+#### **$1^\infty$型未定式**
+
+若极限$\lim u^\upsilon$属于$1^\infty$型未定式，则下式成立
+
+\begin{equation}\lim u^\upsilon = e^{\lim(u - 1)\upsilon}\end{equation}
+
+例如，求下列极限，其中$n$是给定的正整数.
+
+\begin{equation}\lim_{x \to 0}(\frac{e^x + e^{2x} + \dots + e^{nx}}{n})^{\frac{e}{x}}\end{equation}
+
+根据$\lim u^\upsilon = e^{\lim(u - 1)\upsilon}$，得
+
+\begin{equation}\lim_{x \to 0}(\frac{e^x + e^{2x} + \dots + e^{nx}}{n})^{\frac{e}{x}} = e^{\lim_{x \to 0}(\frac{e^x + e^{2x} + \dots + e^{nx}}{n} - 1)\frac{e}{x}}\end{equation}
+
+先处理幂，将其通分，整理可得
+
+\begin{equation}\lim_{x \to 0}(\frac{e^x + e^{2x} + \dots + e^{nx}}{n} - 1)\frac{e}{x} = \lim_{x \to 0}\frac{e}{x}\frac{e^x + e^{2x} + \dots + e^{nx} - n}{n}\end{equation}
+
+将分子的$n$分配给分子的各个指数，即
+
+\begin{equation}\lim_{x \to 0}\frac{e}{x}\frac{e^x + e^{2x} + \dots + e^{nx} - n}{n} = \lim_{x \to 0}\frac{e}{x}\frac{(e^x - 1) + (e^{2x} - 1) + \dots + (e^{nx} - 1)}{n}\end{equation}
+
+将上式中分母的$n$与$x$互换原式保持不变，得
+
+\begin{equation}\lim_{x \to 0}\frac{e}{x}\frac{e^x + e^{2x} + \dots + e^{nx} - n}{n} = \lim_{x \to 0}\frac{e}{n}\frac{(e^x - 1) + (e^{2x} - 1) + \dots + (e^{nx} - 1)}{x}\end{equation}
+
+由$e^u$的泰勒多项式(将其展开到第二项)
+
+\begin{equation}\begin{cases}
+e^x = 1 + x, \newline
+e^{2x} = 1 + 2x ,\newline
+\dots \newline
+e^{nx} = 1 + nx.
+\end{cases}\end{equation}
+
+可得
+
+\begin{equation}
+\begin{aligned}
+&\lim_{x \to 0}\frac{e}{n}\frac{(e^x - 1) + (e^{2x} - 1) + \dots + (e^{nx} - 1)}{x} \newline= &\lim_{x \to 0}\frac{e}{n}\frac{(1 + x - 1) + (1 + 2x - 1) + \dots + (1 + nx - 1)}{x}\newline = &\lim_{x \to 0}\frac{e(1 + 2 + \dots + n)}{n}\newline = &\frac{(n + 1)e}{2}
+\end{aligned}
+\end{equation}
+
+因此，最终求得的极限为
+
+\begin{equation}\lim_{x \to 0}(\frac{e^x + e^{2x} + \dots + e^{nx}}{n})^{\frac{e}{x}} = e^{\lim_{x \to 0}(\frac{e^x + e^{2x} + \dots + e^{nx}}{n} - 1)\frac{e}{x}} = e^{\frac{(n + 1)e}{2}}\end{equation}
