@@ -1,6 +1,6 @@
 ---
 title: "Some summaries on limit calculation"
-date: 2020-08-11T10:09:14+08:00
+date: 2020-08-14T10:45:14+08:00
 categories: ["Calculus"]
 tags: ["Calculus"]
 draft: false
