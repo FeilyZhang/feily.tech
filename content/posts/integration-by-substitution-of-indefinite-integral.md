@@ -10,9 +10,9 @@ draft: false
 
 首先从相关概念入手。
 
-## **原函数与不定积分**
+## **一、原函数与不定积分**
 
-### **原函数**
+### **1.1 原函数**
 
 如果在区间$I$上，可导函数$F(x)$的导函数为$f(x)$，即对任一$x \in I$，都有
 
@@ -20,7 +20,7 @@ draft: false
 
 那么函数$F(x)$就称为$f(x)$（或$f(x)dx$）在区间$I$上的原函数.
 
-### **原函数存在定理**
+### **1.2 原函数存在定理**
 
 如果函数$f(x)$在区间$I$上连续，那么在区间$I$上存在可导函数$F(x)$，使对任一$x \in I$都有
 
@@ -28,7 +28,7 @@ draft: false
 
 即**连续函数一定有原函数.**
 
-### **不定积分**
+### **1.3 不定积分**
 
 在区间$I$上，函数$f(x)$的带有任意常数项的原函数称为$f(x)$（或$f(x)dx$）在区间$I$上的不定积分，记作
 
@@ -40,7 +40,7 @@ draft: false
 
 \begin{equation}\int x^2dx = \frac{x^3}{3} + C.\end{equation}
 
-### **不定积分的性质**
+### **1.4 不定积分的性质**
 
 性质1：设函数$f(x)$及$g(x)$的原函数存在，则
 
@@ -58,11 +58,11 @@ draft: false
 
 \begin{equation}\int\sqrt{x}(x^2 - 5)dx = \int x^{\frac{5}{2}}dx - \int 5x^{\frac{1}{2}}dx = \frac{2}{7}x^{\frac{7}{2}} - 5·\frac{2}{3}x^{\frac{3}{2}} + C = \frac{2}{7}x^3\sqrt{x} - \frac{10}{3}x\sqrt{x} + C.\end{equation}
 
-## **不定积分的换元积分法**
+## **二、不定积分的换元积分法**
 
 将复合函数微分法反过来用于求不定积分，利用中间变量代换，得到复合函数积分法的方法，被称为换元积分法。共包括两类。
 
-### **第一类换元法**
+### **2.1 第一类换元法**
 
 定理：设$f(x)$具有原函数，$u = \varphi(x)$可导，则有换元公式
 
@@ -98,7 +98,7 @@ draft: false
 
 或者更直接一点
 
-\begin{equation}\int 2\cos2xdx = \int \cos2xd(2x) = \sin2x + C.\end{equation}
+\begin{equation}\int 2\cos2xdx = \underbrace{\int \cos2x2dx}_{(a)} = \overbrace{\int \cos2xd(2x)}^{(b)} = \sin2x + C.\end{equation}
 
 再举一例，求下述不定积分
 
@@ -118,4 +118,36 @@ draft: false
 
 上式中，非复合的$x$部分$2x$与$dx$可以凑出$x^2$的微分，因此直接可以转化为(b)式，即求得不定积分
 
-\begin{equation}\int 2xe^{x^{2}}dx = \int e^{x^{2}}d(x^2) = e{x^{2}} + C.\end{equation}
+\begin{equation}\int 2xe^{x^{2}}dx = \int e^{x^{2}}2xdx = \int e^{x^{2}}d(x^2) = e^{x^{2}} + C.\end{equation}
+
+再比如，求下述不定积分
+
+\begin{equation}\int x\sqrt{1 - x^2}dx.\end{equation}
+
+该被积函数虽然$x$出现了不止一次，但是非复合$x$可以与$dx$凑出一个微分，因此不用麻烦地将复合形式写出来，直接计算即可
+
+\begin{equation}\int x\sqrt{1 - x^2}dx = -\frac{1}{2}\int\sqrt{1 - x^2}(-2xdx) = -\frac{1}{2}\int\sqrt{1 - x^2}d(1 - x^2) = -\frac{1}{3}(1 - x^2)^{\frac{3}{2}} + C.\end{equation}
+
+我们上述是以被复合函数为基准，以凑微分为手段的形式来计算不定积分的，即遵循的是从找被复合函数到凑被复合函数微分的技术路线，这种方法适用于被复合函数较容易寻找的情况。但是如果被复合函数不容易寻找，我们应该尽可能将被积函数中的一些表达式凑微分，然后便可以找到被复合函数，即遵循的是凑被复合函数微分到找被复合函数的技术路线。比如下题
+
+\begin{equation}\int \frac{dx}{x(1 + 2\ln x)}\end{equation}
+
+该题的被复合函数并不明显，但是考虑到被积函数中存在$\frac{dx}{x} = d\ln x$，因此便找到了被复合函数，即
+
+\begin{equation}\int \frac{dx}{x(1 + 2\ln x)} = \int\frac{d(\ln x)}{1 + 2\ln x} = \frac{1}{2}\int \frac{d(1 + 2\ln x)}{1 + 2\ln x} = \frac{1}{2}\ln|1 + 2\ln x| + C.\end{equation}
+
+上述这些例题中，之所以尽可能直接写成由式(a)到式(b)的形式，是因为为了说明第一类换元法的内在逻辑，但是可以发现有些许不便之处，因为对于有些题，凑被复合函数的微分明显复杂。有没有一种办法简化呢？当然有的，那就是将代换过程显式表达出来，注意，这种方法略显繁琐，但是计算的可操作性更强。以上题为例
+
+考虑到$\frac{dx}{x} = d\ln x$，因此下式成立
+
+\begin{equation}\int \frac{dx}{x(1 + 2\ln x)} = \int\frac{d(\ln x)}{1 + 2\ln x}.\end{equation}
+
+令$u = 1 + 2\ln x$，对$\ln x$求微分，得$du = 2d(\ln x)$，从而$d(\ln x) = \frac{du}{2}$，那么上式可转化为
+
+\begin{equation}\int\frac{d(\ln x)}{1 + 2\ln x} = \int\frac{du}{2u} = \frac{1}{2}\int\frac{du}{u}.\end{equation}
+
+从而可以直接求出复合函数的不定积分，然后回代即可
+
+\begin{equation}\frac{1}{2}\int\frac{du}{u} = \frac{1}{2}\ln u + C = \frac{1}{2}\ln|1 + 2\ln x| + C.\end{equation}
+
+上述等式中只有式(b)，实际上式(a)就在我们的显式代换中已经实现了.
