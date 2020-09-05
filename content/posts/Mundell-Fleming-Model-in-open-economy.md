@@ -1,5 +1,5 @@
 ---
-title: "Mundell-Fleming-Model-in-open-economy"
+title: "The Mundell-Fleming-Model-in-open-economy"
 date: 2019-10-26T10:26:05+08:00
 categories: ["Macroeconomics"]
 tags: ["Macroeconomics"]
