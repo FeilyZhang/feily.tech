@@ -3,7 +3,7 @@ title: "Some summaries on limit calculation"
 date: 2020-08-14T10:45:14+08:00
 categories: ["Calculus"]
 tags: ["Calculus"]
-draft: false
+draft: true
 ---
 
 本文是对极限计算的一些总结和摘要。在结构编排上可能与相关教材有所出入，但是内容是无差异的，本文将尽可能揭示常用极限计算的通用性方法。

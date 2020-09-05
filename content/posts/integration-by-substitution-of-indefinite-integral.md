@@ -3,7 +3,7 @@ title: "Integration by substitution of indefinite integral"
 date: 2020-08-15T17:42:14+08:00
 categories: ["Calculus"]
 tags: ["Calculus"]
-draft: false
+draft: true
 ---
 
 本文讨论和总结求函数的不定积分的换元积分法的一般形式。求被积函数的不定积分的本质就是求作为导函数的被积函数的原函数，即通过导函数反推原函数。
