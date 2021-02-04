@@ -6,11 +6,16 @@ tags: ["linear algebra"]
 draft: true
 ---
 
- \begin{equation}B = (f1; f2; f3; f4) = 
-\begin{bmatrix}0.876 & 0 & 0 & 0  \newline  0.871 & 0 & 0 & 0  \newline  0.759 & 0 & 0 & 0  \newline  0 & 0.864 & 0 & 0 \newline  0 & 0.835 & 0 & 0  \newline  0 & 0.807 & 0 & 0 \newline 0 & 0 & 0.904 & 0 \newline 0.550 & 0 & -0.666 & 0 \newline 0.614 & 0 & 0.654 & 0 \newline 0 & 0 & 0 & 0.780 \newline 0 & 0 & 0 & -0.691\newline 0.518 & 0 & 0 & 0.654
+
+ \begin{equation}B =  (f1; f2; f3; f4; f5) = 
+\begin{bmatrix}0.643 & -0.333 & 0.493 & 0.221 & -0.124 \newline  0.058 & 0.112 & 0.432 & 0.603 & 0.636 \newline  0.093 & -0.733 & 0.445 & -0.335 & 0.082\newline 0.569 & 0.16 & -0.63 & 0.381 & 0.012 \newline 0.807 & -0.447 & 0.114 & -0.069 & 0.139 \newline 0.747 & -0.118 & -0.252 & 0.416 & -0.207 \newline 0.827 & -0.007 & -0.143 & -0.402 & 0.221 \newline 0.7 & -0.092 & -0.408 & -0.426 & 0.221 \newline 0.788 & -0.172 & 0.084 & 0.236 & -0.264 \newline 0.381 & 0.715 & 0.191 & -0.298 & 0.07 \newline 0.418 & 0.487 & 0.578 & -0.096 & -0.346 \newline 0.534 & 0.68 & 0.178 & -0.036 & 0.114
 \end{bmatrix}^{T}
-\begin{bmatrix}b_{31} \newline b_{11} \newline b_{43} \newline b_{51} \newline b_{53} \newline b_{52} \newline b_{21} \newline b_{13} \newline b_{32} \newline b_{42} \newline b_{12} \newline b_{41}
+\begin{bmatrix}b_{11} \newline b_{12} \newline b_{13} \newline b_{21} \newline b_{31} \newline b_{32} \newline b_{41} \newline b_{42} \newline b_{43} \newline b_{51} \newline b_{52} \newline b_{53}
 \end{bmatrix}
+\end{equation}
+
+
+ \begin{equation}D_b = \Lambda_{B} \times F_B \times D_b
 \end{equation}
 
  \begin{equation}C = (f1; f2) = 
