@@ -26,7 +26,7 @@ draft: false
 
 通过对大众点评登录流程进行追踪，可发现其完整的接口调用链如下（均使用POST方法）：
 
-1. https://account.dianping.com
+1. https://account.dianping.com/account/ajax/checkRisk
 2. https://account.dianping.com/account/ajax/mobileVerifySend
 3. https://account.dianping.com/account/ajax/mfastlogin
 
