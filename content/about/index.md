@@ -13,4 +13,4 @@ All articles in this blog are original and licensed through CC by-nc-sa 3.0 CN, 
 + Github: [@FeilyZhang](https://github.com/FeilyZhang)
 + Twitter: [@FeilyZhang](https://twitter.com/FeilyZhang)
 + NetEase Music: [@取一个名字只能说好难](https://music.163.com/#/user/home?id=424858919)
-+ Wechat Official Account: @机器学习泥瓦张(ID: FeilyZhang)
++ Wechat Official Account: @real小袁之家(ID: FeilyZhang)
