@@ -2,7 +2,7 @@ baseURL = "https://feily.tech/"
 languageCode = "en-us"
 title = "Feily Zhang"
 theme = "ezhil"
-paginate = 5
+paginate = 10
 
 copyright = "© Copyright feily.tech"
 
